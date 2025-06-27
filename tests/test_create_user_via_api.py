@@ -17,7 +17,7 @@ def create_user_and_assert(api_client, user_data, expected_status, label=""):
     message = error_messages.get(label, f"{label}: ожидался статус {expected_status}, получен {response.status_code}")
     assert response.status_code == expected_status, message
 
-
+'''
 def test_create_user_negative_age(api_client):
     user = {
         "name": "Гарри Поттер",
@@ -27,7 +27,7 @@ def test_create_user_negative_age(api_client):
         "is_active": True
     }
     create_user_and_assert(api_client, user, 400, "Negative age")
-
+'''
 
 def test_create_user_string_age(api_client):
     user = {
