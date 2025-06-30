@@ -17,8 +17,7 @@ def create_user_and_assert(api_client, user_data, expected_status, label=""):
     message = error_messages.get(label, f"{label}: ожидался статус {expected_status}, получен {response.status_code}")
     assert response.status_code == expected_status, message
 
-'''
-Рабочие тесты, но выключены т.к. веб-форма не соответвует требованиям ТЗ
+
 
 def test_create_user_negative_age(api_client):
     user = {
@@ -126,4 +125,3 @@ def test_create_user_minimal_valid_data(api_client):
         "is_active": False
     }
     create_user_and_assert(api_client, user, 200, "Minimal valid data")
-'''
